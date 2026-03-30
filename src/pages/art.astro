@@ -1,25 +1,30 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import { Image } from "astro:assets";
+import pixelCabin from "@assets/pixel-cabin.png";
+import pixelCoffeeCup from "@assets/pixel-coffee-cup.jpeg";
+import pixelHighway from "@assets/pixel-highway.jpeg";
+import pixelSnow from "@assets/pixel-snow.jpeg";
 
 const artworks = [
   {
-    src: "/src/assets/pixel-cabin.png",
+    src: pixelCabin,
     alt: "Pixel art cabin",
     description: "A recreation of the cabin I stayed with Shrey, in the middle of the german countryside. It was february, so we had to stay warm using wood and an old chimney stove, and fell asleep with the sound of the nearby creek. It was a cozy, magical and freeing weekend.",
   },
   {
-    src: "/src/assets/pixel-coffee-cup.jpeg",
+    src: pixelCoffeeCup,
     alt: "Pixel art coffee cup",
     description: "A cozy coffee study with simple shapes.",
   },
   {
-    src: "/src/assets/pixel-highway.jpeg",
+    src: pixelHighway,
     alt: "Pixel art highway",
     description: "Night highway lights with a cinematic mood.",
   },
   {
-    src: "/src/assets/pixel-snow.jpeg",
+    src: pixelSnow,
     alt: "Pixel art snow landscape",
     description: "A snowy landscape with soft contrast.",
   },
@@ -46,7 +51,7 @@ const artworks = [
           {
             artworks.map((art) => (
               <li>
-                <img
+                <Image
                   src={art.src}
                   alt={art.alt}
                   class="h-auto w-full object-cover"

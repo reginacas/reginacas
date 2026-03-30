@@ -9,6 +9,8 @@ import GithubContributions from "@components/GithubContributions.astro";
 import Link from "@components/Link.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import portrait from "@assets/pixel-portait.jpg";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -27,11 +29,11 @@ const projects: CollectionEntry<"projects">[] = (
   <Container>
     <aside data-pagefind-ignore>
       <div class="mb6 h-32 w-32 rounded-16 overflow-hidden">
-      <img
-        src="/src/assets/pixel-portait.jpg"
-        alt="Profile picture of Regina Castro"
-        class="scale-200 mt-5"
-      />
+        <Image
+          src={portrait}
+          alt="Profile picture of Regina Castro"
+          class="scale-200 mt-5"
+        />
       </div>
       <h1 class="font-medium mt-6 text-3xl text-black dark:text-neutral-50">
         <span style="color: var(--primary-color); font-family: var(--font-serif);">Hola!</span> I'm Regina,
