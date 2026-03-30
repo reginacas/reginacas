@@ -7,7 +7,6 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://reginacas.github.io",
-  base: "/reginacas",
   integrations: [sitemap(), mdx(), pagefind()],
   vite: {
     plugins: [tailwindcss()],
