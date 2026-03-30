@@ -1,0 +1,63 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+
+const artworks = [
+  {
+    src: "/src/assets/pixel-cabin.png",
+    alt: "Pixel art cabin",
+    description: "A recreation of the cabin I stayed with Shrey, in the middle of the german countryside. It was february, so we had to stay warm using wood and an old chimney stove, and fell asleep with the sound of the nearby creek. It was a cozy, magical and freeing weekend.",
+  },
+  {
+    src: "/src/assets/pixel-coffee-cup.jpeg",
+    alt: "Pixel art coffee cup",
+    description: "A cozy coffee study with simple shapes.",
+  },
+  {
+    src: "/src/assets/pixel-highway.jpeg",
+    alt: "Pixel art highway",
+    description: "Night highway lights with a cinematic mood.",
+  },
+  {
+    src: "/src/assets/pixel-snow.jpeg",
+    alt: "Pixel art snow landscape",
+    description: "A snowy landscape with soft contrast.",
+  },
+];
+---
+
+<Layout title="Art" description="A space for visual explorations and artwork.">
+  <Container>
+    <aside data-pagefind-ignore>
+      <section class="animate space-y-4">
+        <div class="disc-bg">
+          <div class="disc">
+            <h1 class="text-5xl font-medium text-black dark:text-neutral-50" style="font-family: var(--font-mono);">
+               ART
+            </h1>
+          </div>
+        </div>
+        <p class="mb-12 text-2xl">
+          I really love the aesthetic of pixel art games such as Coffee Talk, Stardew Valley and Undertale, so I try and recreate their cozy charm
+          using my iPad and Procreate. More will be added here soon.
+        </p>
+
+        <ul class="not-prose flex flex-col gap-12">
+          {
+            artworks.map((art) => (
+              <li>
+                <img
+                  src={art.src}
+                  alt={art.alt}
+                  class="h-auto w-full object-cover"
+                  loading="lazy"
+                />
+                <p class="mt-4 text-black/70 dark:text-white/70 mb-12">{art.description}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </aside>
+  </Container>
+</Layout>

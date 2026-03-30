@@ -1,7 +1,9 @@
 ---
-title: "Astro Micro"
-description: "Astro Micro is an accessible and lightweight blog."
+title: "pixel weather"
+description: "a browser extension that shows you the weather on your city, plus a beautiful pixel-art illustration representing the climate conditions"
 date: "2024-05-26"
+image: "/astro-micro.jpg"
+tags: ["Browser Extension", "Weather", "Pixel Art"]
 demoURL: "https://astro-micro.vercel.app"
 repoURL: "https://github.com/trevortylerlee/astro-micro"
 ---

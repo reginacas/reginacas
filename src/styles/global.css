@@ -1,13 +1,23 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('../fonts/Archivo-VariableFont_wdth,wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
 
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: Geist Sans, ui-sans-serif, system-ui, sans-serif,
+  --font-serif: 'IBM Plex Serif', ui-serif, Georgia, Cambria,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-mono: Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco,
+  --font-mono: 'Archivo', ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 
@@ -46,20 +56,68 @@
   }
 
   body {
-    @apply font-sans antialiased;
+    @apply font-serif antialiased;
     @apply flex flex-col;
-    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply bg-neutral-100 dark:bg-neutral-950;
     @apply text-black/75 dark:text-white/75;
   }
 
   header {
     @apply fixed left-0 right-0 top-0 z-50 py-6;
-    @apply bg-neutral-100/75 dark:bg-neutral-900/75;
+    @apply bg-neutral-100/75 dark:bg-neutral-950/75;
     @apply saturate-200 backdrop-blur-xs;
   }
 
   main {
-    @apply flex-1 py-32;
+    @apply flex-1 py-24;
+  }
+  h1{
+    font-family: var(--font-serif);
+  }
+  h2{
+    @apply font-medium text-black dark:text-gray-400;
+    font-family: var(--font-mono);
+  }
+  a {
+    @apply text-current;
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  a.link{
+    @apply relative inline-block no-underline;
+  }
+  a.link .wavy {
+    position: relative;
+    display: inline-block;
+  }
+  a.link .wavy::before {
+    position: absolute;
+    inset: 0;
+    content: attr(data-content);
+    color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+    text-decoration-color: currentColor;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 700ms ease-in-out;
+    pointer-events: none;
+  }
+  a.link:hover {
+    color: var(--primary-color);
+  }
+  a.link:hover .wavy::before,
+  a.link:focus-visible .wavy::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .mono {
+    font-family: var(--font-mono); 
+  }
+
+  li a{
+    @apply text-current decoration-0;
   }
 
   footer {
@@ -71,17 +129,26 @@
     @apply prose-headings:font-semibold;
     @apply prose-headings:text-black dark:prose-headings:text-white;
   }
+  .dotted{
+    @apply underline underline-offset-[6px] decoration-dotted decoration-2;
+  }
 }
 
 @layer utilities {
   article a {
-    @apply font-sans text-current underline underline-offset-[3px];
+    @apply font-serif text-current underline underline-offset-[3px];
     @apply decoration-black/30 dark:decoration-white/30;
     @apply transition-colors duration-300 ease-in-out;
   }
   article a:hover {
     @apply text-black dark:text-white;
     @apply decoration-black/50 dark:decoration-white/50;
+    text-shadow:
+      0 0 6px color-mix(in srgb, var(--primary-color) 75%, transparent),
+      0 0 14px color-mix(in srgb, var(--primary-color) 45%, transparent);
+    filter: drop-shadow(
+      0 0 5px color-mix(in srgb, var(--primary-color) 50%, transparent)
+    );
   }
 }
 
@@ -92,6 +159,48 @@
 
 .animate.show {
   @apply translate-y-0 opacity-100;
+}
+
+.disc-bg {
+  perspective: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 30vh;
+}
+
+.disc {
+  width: 240px;
+  height: 130px;
+  border-radius: 100%;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  transform: rotateY(0deg);
+  animation: rotateAnimation 5s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.disc p {
+  margin-block: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateZ(5deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateZ(0deg);
+  }
 }
 
 html #back-to-top {
@@ -108,6 +217,9 @@ pre {
 }
 
 :root {
+  --primary-color: #8ae170;
+  --secondary-color: #8d85ff;
+  --light-green: #c3f9ce;
   --astro-code-foreground: #09090b;
   --astro-code-background: #fafafa;
   --astro-code-token-comment: #a19595;
@@ -132,7 +244,7 @@ pre {
   --astro-code-token-parameter: #4e8fdf;
   --astro-code-token-string-expression: #bf7db6;
   --astro-code-token-punctuation: #8996a3;
-  --astro-code-token-link: #8d85ff;
+  --astro-code-token-link: #B2AAD7;
 }
 
 /* copy code button on codeblocks */

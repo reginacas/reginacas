@@ -30,6 +30,13 @@ const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
     <aside data-pagefind-ignore>
       <div class="space-y-10">
         <div class="space-y-4">
+          <div class="disc-bg">
+          <div class="disc">
+            <h1 class="text-5xl font-medium text-black dark:text-neutral-50" style="font-family: var(--font-mono);">
+               FEED
+            </h1>
+          </div>
+        </div>
           {
             years.map((year) => (
               <section class="animate space-y-4">

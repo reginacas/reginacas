@@ -1,0 +1,29 @@
+---
+const username = "reginacas";
+const chartSrc = `https://ghchart.rshah.org/8ae170/${username}`;
+---
+
+<section class="animate space-y-4" aria-labelledby="github-activity-title">
+  <div class="flex flex-wrap items-center justify-between gap-y-2">
+    <h2 id="github-activity-title" class="font-semibold text-black dark:text-white">
+      GitHub activity
+    </h2>
+    <a
+      href={`https://github.com/${username}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm"
+      aria-label={`View ${username} on GitHub`}
+    >
+      @{username}
+    </a>
+  </div>
+
+    <img
+      src={chartSrc}
+      alt={`GitHub contribution graph for ${username}`}
+      loading="lazy"
+      class="w-full"
+    />
+
+</section>

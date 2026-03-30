@@ -1,9 +1,11 @@
 ---
-title: "Astro Sphere"
-description: "Portfolio and blog build with astro."
+title: "SenseUI"
+description: "Browser extension that provides AI-assisted design feedback for web developers"
 date: "03/18/2024"
-demoURL: "https://astro-sphere-demo.vercel.app"
-repoURL: "https://github.com/markhorn-dev/astro-sphere"
+image: "/astro-sphere.jpg"
+tags: ["Browser Extension", "AI", "Design Feedback"]
+demoURL: "https://chromewebstore.google.com/detail/senseui/nolkkggkcmpjejlobeljmffhcmbaeflk?hl=en"
+repoURL: "https://github.com/reginacas/sense-ui"
 ---
 
 ![Astro Sphere](/astro-sphere.jpg)

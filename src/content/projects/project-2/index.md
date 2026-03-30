@@ -1,7 +1,9 @@
 ---
-title: "Astro Nano"
-description: "Minimal portfolio and blog build with astro and no frameworks."
+title: "interactive workflow component"
+description: "A diagram-like component that shows each step of a scientific process with its description and mapped to a relevant instrument from Beckman Coulter Life Sciences"
 date: "2024-03-26"
+image: "/astro-nano.png"
+tags: ["UX", "Data Visualization", "Scientific Workflow"]
 demoURL: "https://astro-nano-demo.vercel.app"
 repoURL: "https://github.com/markhorn-dev/astro-nano"
 ---

@@ -1,0 +1,88 @@
+---
+type TimelineTagTone = "ui design" | "front-end" | "prototype" | "ux research" | "motion graphics" | "seo" | "branding";
+
+type TimelineItem = {
+  name: string;
+  year: string;
+  role: string;
+  tags: { label: string; tone: TimelineTagTone }[];
+};
+
+const workItems: TimelineItem[] = [
+  {
+    name: "Beckman Coulter Life Sciences",
+    year: "2024 - Present",
+    role: "Web and Digital Experience Intern",
+    tags: [
+      { label: "UI design", tone: "ui design" },
+      { label: "SEO", tone: "seo" },
+      { label: "Front-end", tone: "front-end" },
+      { label: "UX research", tone: "ux research" },
+    ],
+  },
+  {
+    name: "QuestionPro",
+    year: "2022 - 2023",
+    role: "UX Designer",
+    tags: [
+      { label: "UI Design", tone: "ui design" },
+      { label: "UX research", tone: "ux research" },
+    ],
+  },
+  {
+    name: "Oblek",
+    year: "2020 - 2021",
+    role: "Multimedia Designer",
+    tags: [
+      { label: "Motion graphics", tone: "motion graphics" },
+    ],
+  },
+    {
+    name: "Freelance",
+    year: "2020 - 2022",
+    role: "Graphic, Motion & Web Designer",
+    tags: [
+      { label: "UI Design", tone: "ui design" },
+      { label: "Motion graphics", tone: "motion graphics" },
+      { label: "Front-end", tone: "front-end" },
+      { label: "Branding", tone: "branding" },
+    ],
+  },
+];
+
+const toneClassMap: Record<TimelineTagTone, string> = {
+  "ui design": "border-[#2c5db9]/60 bg-[#1f3b7a]/35 text-[#71a7ff]",
+  "front-end": "border-[#1f6a42]/60 bg-[#123a26]/50 text-[#5bdc95]",
+  "prototype": "border-[#8c4314]/60 bg-[#5a2f14]/55 text-[#ff9b45]",
+  "ux research": "border-[#15556a]/60 bg-[#123342]/55 text-[#6ed9ff]",
+  "motion graphics": "border-[#6d2e73]/60 bg-[#47214d]/55 text-[#e78cf6]",
+  "seo": "border-[#5a3290]/60 bg-[#3f235e]/55 text-[#b276ff]",
+  "branding": "border-[#8a2be2]/60 bg-[#5d2a91]/55 text-[#c9a0dc]",
+};
+---
+<section class="not-prose">
+  <ul class="space-y-4">
+    {
+      workItems.map((item) => (
+        <li class="flex justify-between border-b border-black/15 pb-4 transition-colors duration-300 ease-in-out focus-within:bg-black/5 focus-within:text-black dark:border-white/20 dark:focus-within:bg-white/5 dark:focus-within:text-white">
+            <div class="flex-col">
+            <h3 class="font-semibold mb-2">{item.role}</h3>
+            <ul class="flex flex-wrap gap-1">
+            {
+              item.tags.map((tag) => (
+                <li class={`text-sm rounded-xl border px-2 py-1 ${toneClassMap[tag.tone]}`}>
+                  {tag.label}
+                </li>
+              ))
+            }
+          </ul>
+          </div>
+          <div class="space-y-1 justify-end">
+            <p class="text-base text-right mb-3">{item.year}</p>
+            <p class="text-semibold text-right">{item.name}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
