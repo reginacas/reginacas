@@ -60,6 +60,7 @@
     @apply flex flex-col;
     @apply bg-neutral-100 dark:bg-neutral-950;
     @apply text-black/75 dark:text-white/75;
+    font-weight: 400;
   }
 
   header {
@@ -78,6 +79,9 @@
     @apply font-medium text-black dark:text-gray-400;
     font-family: var(--font-mono);
   }
+  p{
+    @apply text-current text-base font-normal;
+  }
   a {
     @apply text-current;
     color: var(--primary-color);
@@ -85,6 +89,7 @@
   }
   a.link{
     @apply relative inline-block no-underline;
+    color: var(--primary-color);
   }
   a.link .wavy {
     position: relative;
