@@ -3,31 +3,36 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { Image } from "astro:assets";
 import pixelCabin from "@assets/pixel-cabin.png";
-import pixelCoffeeCup from "@assets/pixel-coffee-cup.jpeg";
-import pixelHighway from "@assets/pixel-highway.jpeg";
-import pixelSnow from "@assets/pixel-snow.jpeg";
+import pixelCoffeeCup from "@assets/pixel-coffee-mug.png";
+import pixelHighway from "@assets/pixel-highway.png";
+import pixelSnow from "@assets/pixel-snow.png";
+import pixelUndersea from "@assets/pixel-undersea.png";
 
 const artworks = [
   {
     src: pixelCabin,
-    alt: "Pixel art cabin",
+    alt: "A small german-style brown cabin with turquoise roof. Next to it a big tree with a lot of foliage and in the ground some tiny flowers. The background shows a pink twilight sky with a single shooting star.",
     description: "A recreation of the cabin I stayed with Shrey, in the middle of the german countryside. It was february, so we had to stay warm using wood and an old chimney stove, and fell asleep with the sound of the nearby creek. It was a cozy, magical and freeing weekend.",
   },
   {
     src: pixelCoffeeCup,
-    alt: "Pixel art coffee cup",
-    description: "A cozy coffee study with simple shapes.",
+    alt: "A coffee mug with hot coffee and steam rising from it, with the city skyline in the background and rain.",
+    description: "A cozy coffee cup study.",
   },
   {
     src: pixelHighway,
-    alt: "Pixel art highway",
-    description: "Night highway lights with a cinematic mood.",
+    alt: "A highway with a car driving into the distance, with a clouded sky background and an autumnal feel.",
+    description: "Cloudy highway.",
   },
   {
     src: pixelSnow,
-    alt: "Pixel art snow landscape",
+    alt: "View of a lit candle with a snowy hill and a snowman in the background.",
     description: "A snowy landscape with soft contrast.",
   },
+  {
+    src: pixelUndersea,
+    alt: "A couple of legs on top of surfboards dangling in the water, seen from the bottom below. There are a few colorful corals.",
+    description: 'A recreation of Fabian Lavater\'s piece: <a class="link" href="https://lavaterart.com/products/head-in-the-clouds-2nd-edition" target="_blank" rel="noopener noreferrer">Head in the Clouds</a>',  },
 ];
 ---
 
@@ -57,7 +62,10 @@ const artworks = [
                   class="h-auto w-full object-cover"
                   loading="lazy"
                 />
-                <p class="mt-4 text-black/70 dark:text-white/70 mb-12">{art.description}</p>
+                <p
+                  class="mt-4 mb-12 text-black/70 dark:text-white/70"
+                  set:html={art.description}
+                />
               </li>
             ))
           }
