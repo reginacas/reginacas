@@ -28,103 +28,100 @@ const projects: CollectionEntry<"projects">[] = (
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <div class="mb6 h-32 w-32 rounded-16 overflow-hidden">
-        <Image
-          src={portrait}
-          alt="Profile picture of Regina Castro"
-          class="scale-200 mt-5"
-        />
-      </div>
-      <h1 class="font-medium mt-6 text-3xl text-black dark:text-neutral-50">
-        <span style="color: var(--primary-color); font-family: var(--font-serif); text-decoration: underline wavy; text-underline-offset: 4px;">Hello!</span> I'm Regina,
-      </h1>
-      <div class="space-y-16 mt-6">
-        <section>
-          <p class="text-2xl leading-10">
-            I'm a <span class="text-neutral-50 font-semibold">designer & developer</span> with over 5 years of experience bringing digital experiences to life.
-          </p>
-          <p class="text-2xl leading-10 mt-4">
-            I'm currently working as a web and digital experience designer at <a class="link" href="https://www.beckman.com/" target="_blank"><span class="wavy" data-content="Beckman Coulter Life Sciences">Beckman Coulter Life Sciences</span></a> while I finish my Master's degree in Human-Computer Interaction.
-          </p>
-        </section>
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Selected projects
-            </h2>
-            <Link href="/projects"> See all projects </Link>
-          </div>
-          <ul class="not-prose flex flex-col gap-6">
-            {
-              projects.map((project) => (
-                <li>
-                  <ProjectCard project={project} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-            Work
-          </h2>
-          </div>
-          <WorkTimeline />
-        </section>
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-y-2">
-            <h2 class="font-semibold text-black dark:text-white">
-              Recent posts
-            </h2>
-          </div>
-          <ul class="not-prose flex flex-col gap-4">
-            {
-              blog.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-        <section class="animate space-y-4">
-          <h2 class="font-semibold text-black dark:text-white">
-            Let's Connect
-          </h2>
-          <article>
-            <p>
-              If you want to get in touch with me about something or just to say
-              hi, reach out on social media or send me an email.
+      <div class="mb-12 mt-8 flex items-center gap-6">
+        <div class="rounded-16 overflow-hidden flex-shrink-0" style="width: 120px; height: 120px;">
+          <Image
+            src={portrait}
+            alt="Profile picture of Regina Castro"
+            class="w-full h-full scale-150 object-cover"
+          />
+        </div>
+        <div>
+        <h1 class="mb-2 text-3xl font-medium text-black dark:text-neutral-50">
+          <span style="color: var(--primary-color)">Hello!</span> I'm Regina,
+        </h1>
+          <section>
+            <p class="text-xl text-black/70 dark:text-white/70 leading-8">
+              A <span
+                class="text-neutral-50"
+                style="font-family: var(--font-mono);"
+                >designer & developer</span
+              > with over 5 years of experience bringing digital experiences to life.
             </p>
-          </article>
-          <ul class="not-prose flex flex-wrap gap-2">
-            {
-              SOCIALS.map((SOCIAL) => (
-                <li class="flex gap-x-2 text-nowrap">
-                  <Link
-                    href={SOCIAL.HREF}
-                    external
-                    aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
-                  >
-                    {SOCIAL.NAME}
-                  </Link>
-                  {"/"}
-                </li>
-              ))
-            }
-            <li class="line-clamp-1">
-              <Link
-                href={`mailto:${SITE.EMAIL}`}
-                aria-label={`Email ${SITE.TITLE}`}
-              >
-                {SITE.EMAIL}
-              </Link>
-            </li>
-          </ul>
-        </section>
-        <GithubContributions />
+          </section>
+        </div>
       </div>
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">
+            Selected projects
+          </h2>
+          <Link href="/projects"> See all projects </Link>
+        </div>
+        <ul class="not-prose flex flex-col gap-6">
+          {
+            projects.map((project) => (
+              <li>
+                <ProjectCard project={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">Work</h2>
+        </div>
+        <WorkTimeline />
+      </section>
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h2 class="font-semibold text-black dark:text-white">Recent posts</h2>
+        </div>
+        <ul class="not-prose flex flex-col gap-4">
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <section class="animate space-y-4">
+        <h2 class="font-semibold text-black dark:text-white">Let's Connect</h2>
+        <article>
+          <p>
+            If you want to get in touch with me about something or just to say
+            hi, reach out on social media or send me an email.
+          </p>
+        </article>
+        <ul class="not-prose flex flex-wrap gap-2">
+          {
+            SOCIALS.map((SOCIAL) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link
+                  href={SOCIAL.HREF}
+                  external
+                  aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`}
+                >
+                  {SOCIAL.NAME}
+                </Link>
+                {"/"}
+              </li>
+            ))
+          }
+          <li class="line-clamp-1">
+            <Link
+              href={`mailto:${SITE.EMAIL}`}
+              aria-label={`Email ${SITE.TITLE}`}
+            >
+              {SITE.EMAIL}
+            </Link>
+          </li>
+        </ul>
+      </section>
+      <GithubContributions />
     </aside>
   </Container>
 </Layout>

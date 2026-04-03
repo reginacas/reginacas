@@ -60,10 +60,24 @@
 
   body {
     @apply font-sans antialiased;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    font-feature-settings: "cv11";
     @apply flex flex-col;
     @apply bg-neutral-100 dark:bg-neutral-950;
     @apply text-black/75 dark:text-white/75;
     font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-mono);
+    font-weight: 500;
   }
 
   header {
@@ -75,16 +89,14 @@
   main {
     @apply flex-1 py-24;
   }
-  h1{
-    font-family: var(--font-serif);
-  }
+
   h2{
-    @apply font-medium text-black dark:text-gray-400;
-    font-family: var(--font-sans);
+    @apply font-medium text-black dark:text-[var(--primary-color)];
   }
   p{
-    @apply text-current text-base font-normal;
+    @apply font-normal text-lg leading-9;
   }
+
   a {
     @apply text-current;
     color: var(--primary-color);
@@ -180,7 +192,7 @@
 
 .disc {
   width: 240px;
-  height: 130px;
+  height: 150px;
   border-radius: 100%;
   background: transparent;
   border: 2px solid var(--primary-color);
@@ -191,6 +203,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .disc p {
