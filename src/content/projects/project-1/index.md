@@ -2,7 +2,7 @@
 title: "SenseUI"
 description: "Browser extension that provides AI-assisted design feedback for web developers"
 date: "03/18/2024"
-image: "/astro-sphere.jpg"
+image: "src/assets/senseui-portfolio.png"
 tags: ["Browser Extension", "AI", "Design Feedback"]
 demoURL: "https://chromewebstore.google.com/detail/senseui/nolkkggkcmpjejlobeljmffhcmbaeflk?hl=en"
 repoURL: "https://github.com/reginacas/sense-ui"
