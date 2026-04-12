@@ -139,7 +139,7 @@
 
   button{
     @apply cursor-pointer inline-flex items-center gap-2 rounded-md border border-black/15 px-3 py-2 text-sm text-black/80 transition-colors duration-300 ease-in-out hover:border-black/30 hover:text-black focus-visible:border-black/30 focus-visible:text-black dark:border-white/20 dark:text-white/80 dark:hover:border-white/40 dark:hover:text-white dark:focus-visible:border-white/40 dark:focus-visible:text-white;
-    color: white; 
+    color: var(--primary-color);
     font-family: var(--font-mono);
   }
 
