@@ -4,6 +4,8 @@ import Container from "@components/Container.astro";
 import WorkTimeline from "@components/WorkTimeline.astro";
 import GithubContributions from "@components/GithubContributions.astro";
 import Link from "@components/Link.astro";
+import { Image } from "astro:assets";
+import portrait from "@assets/real-me.jpg";
 import { SITE, SOCIALS } from "@consts";
 ---
 
@@ -17,11 +19,11 @@ import { SITE, SOCIALS } from "@consts";
          I have more than 6 years of experience working in the UX field, and currently getting my M.Sc. in Human-Computer Interaction at the University of Siegen.
         
         </p>
-          <img
-              src="src/assets/real-me.jpg"
-              alt="Profile picture of Regina Castro"
-              class="rounded-16"
-            />
+          <Image
+            src={portrait}
+            alt="Profile picture of Regina Castro"
+            class="rounded-16"
+          />
           <h2 class="mt-8">What do I do?</h2>
           I design digital interfaces and products, with a strong focus on understanding user needs, motivations, and pain points rather than just building features. 
           My strongest skill is my ability to empathize with users while also understanding business needs and collaborating closely with engineers to design technically feasible solutions. 
