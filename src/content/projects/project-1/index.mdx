@@ -9,6 +9,17 @@ demoURL: "https://chromewebstore.google.com/detail/senseui/nolkkggkcmpjejlobeljm
 repoURL: "https://github.com/reginacas/sense-ui"
 ---
 
+import { Image } from "astro:assets";
+import senseuiWelcome from "@assets/senseui-welcome.png";
+import senseuiBefore from "@assets/senseui-before.png";
+import senseuiDesired from "@assets/senseui-desired.png";
+import senseuiWizard from "@assets/senseui-wizard.png";
+import senseuiDescription from "@assets/senseui-description.png";
+import senseuiIssues from "@assets/senseui-issues.png";
+import senseuiSettings from "@assets/senseui-settings.png";
+import senseuiPrompts from "@assets/senseui-prompts.png";
+import senseuiProjects from "@assets/senseui-projects.png";
+
 ## What is SenseUI?
 
 SenseUI is an open-source browser extension that gives blind and low-vision web developers real-time, actionable feedback on their web designs.
@@ -26,7 +37,7 @@ Additioanlly, developers are forced to manually share screenshots and code conte
 
 ## Proposed solution
 
-<img src="/src/assets/senseui-welcome.png" alt="SenseUI's welcome page opened in a browser" class="project-img">
+<Image src={senseuiWelcome} alt="SenseUI's welcome page opened in a browser" class="project-img" />
 
 This is what sparked the idea to create <i>the first web design focused AI tool for blind and low vision developers</i>: SenseUI, an open-source, AI-powered design tool co-designed with blind and low-vision developers. By embedding accessibility and design context directly into the tool’s architecture, SenseUI eliminates the need for sighted colleagues intervention, enabling developers to work independently, advance their careers, and participate fully in the frontend ecosystem. SenseUI is completely free to use and open to improvement suggestions and feature ideas.
 
@@ -40,22 +51,22 @@ To ensure SenseUI was truly effective, I employed a multi-stage, participatory m
 
 My process began with interviews and contextual inquiries with blind and low-vision developers; observing their unique workflows when styling web projects and managing interactions and pain points with existing AI tools. These insights were materialized into design requirements.
 
-**Participants' <i>current</i> workflow using general-purpose AI tools:**<br>
-<br>
- ![Diagram showing participants' current workflow with general-purpose AI tools](src/assets/senseui-before.png)
+**Participants' <i>current</i> workflow using general-purpose AI tools:**<br />
+<br />
+<Image src={senseuiBefore} alt="Diagram showing participants' current workflow with general-purpose AI tools" class="project-img" />
 
 ---
 
-**Participants' <i>ideal</i> workflow in an AI-assisted design feedback tool:**<br>
-<br>
-![Diagram showing participants' ideal workflow](src/assets/senseui-desired.png)<br>
-<br>
+**Participants' <i>ideal</i> workflow in an AI-assisted design feedback tool:**<br />
+<br />
+<Image src={senseuiDesired} alt="Diagram showing participants' ideal workflow" class="project-img" /><br />
+<br />
 
 ### 2. Prototyping for validation
 
 Before writing production code, I designed an inital interaction flowchart developed a non-functional Wizard-of-Oz prototype. This allowed me to simulate AI-driven design feedback in real-time. By testing this prototype with volunteers, I validated the core value proposition and established the essential feature set without committing to a premature technical architecture.
 
-![A process flowchart showcasing the steps for the wizard-of-oz test, which included asking the user to type certain requests (visual description, issues, and recommendations), which in return would generate pre-scripted responses tailored to the user requirements gathered from previous research](src/assets/senseui-wizard.png)
+<Image src={senseuiWizard} alt="A process flowchart showcasing the steps for the wizard-of-oz test, which included asking the user to type certain requests (visual description, issues, and recommendations), which in return would generate pre-scripted responses tailored to the user requirements gathered from previous research" class="project-img" />
 
 ### 3. Agile, co-development of SenseUI
 
@@ -72,7 +83,7 @@ With the help of over 10 collaborators, we used the Agile framework to release e
 
 After 5 completed Sprints, SenseUI v1.0 is now live on the Chrome Web Store! 
 
-<img class="project-img" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" src="/src/assets/senseui-description.png">
+<Image src={senseuiDescription} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 
 
 ### Technical achievements
@@ -81,21 +92,21 @@ After 5 completed Sprints, SenseUI v1.0 is now live on the Chrome Web Store!
 
 Unlike general-purpose AI tools, SenseUI autonomously extracts the DOM structure, CSS, and visual state of the current page. This eliminates the "extra labor" of manual screenshots and prompt engineering, allowing developers to focus on the code rather than the tooling.
 
-<img class="project-img" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" src="/src/assets/senseui-issues.png">
+<Image src={senseuiIssues} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 
-<img class="project-img" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" src="/src/assets/senseui-settings.png">
+<Image src={senseuiSettings} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 
 #### Effective workflows for UI auditing
 
 Users can now perform independent UI audits on their web projects; they can identify accessibility gaps, design issues and validate design decisions in real-time. By providing slash commands and buttons for common tasks, the system provides effective workflows and generates actionable feedback rather than generic suggestions.
 
-<img class="project-img block mx-auto w-full md:w-2/3" alt="A screenshot showing SenseUI's available slash commands: /describe, /issues, /type, /color, /spacing, /alignment, /refresh, /clear" src="/src/assets/senseui-prompts.png">
+<Image src={senseuiPrompts} alt="A screenshot showing SenseUI's available slash commands: /describe, /issues, /type, /color, /spacing, /alignment, /refresh, /clear" class="project-img block mx-auto w-full md:w-2/3" />
 
 #### Project-driven workflows
 
 SenseUI supports project-level state management, allowing developers to align their codebase with project-specific design specifications and goals, bridging the gap between high-level vision and implementation.
 
-<img class="project-img" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" src="/src/assets/senseui-projects.png">
+<Image src={senseuiProjects} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 
 ## Takeaway
 
