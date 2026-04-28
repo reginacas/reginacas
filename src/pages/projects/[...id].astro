@@ -24,6 +24,11 @@ const { Content, headings } = await render(project);
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
+  <aside class="hidden lg:block fixed left-6 w-64 top-20">
+    <div class="fixed w-70 top-45">
+      <TableOfContents headings={headings} />
+    </div>
+  </aside>
   <Container>
     <div class="animate">
       <BackToPrevious href="/projects">Back to projects</BackToPrevious>
@@ -43,6 +48,13 @@ const { Content, headings } = await render(project);
       <h1 class="text-3xl font-semibold text-black dark:text-white">
         {project.data.title}
       </h1>
+      <div class="animate my-10">
+      <img
+        src={project.data.image ?? "/astro-sphere.jpg"}
+        alt={`${project.data.title} banner`}
+        class="w-full object-cover rounded-lg"
+      />
+    </div>
       {
         (project.data.demoURL || project.data.repoURL) && (
           <nav class="flex gap-1">
@@ -61,7 +73,9 @@ const { Content, headings } = await render(project);
         )
       }
     </div>
-    <TableOfContents headings={headings} />
+    <div class="lg:hidden">
+      <TableOfContents headings={headings} />
+    </div>
     <article class="animate">
       <Content />
     </article>
