@@ -17,7 +17,7 @@ const blog = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const selectedProjectTitles = ["SenseUI — A web design assistant for blind and low vision developers", "Simplifying complex scientific workflows through modular design"];
+const selectedProjectTitles = ["SenseUI — A web design assistant for blind and low vision developers", "Smart Workflows — Simplifying complex component creation"];
 
 const projects: CollectionEntry<"projects">[] = (
   await getCollection("projects")
@@ -36,86 +36,87 @@ const projects: CollectionEntry<"projects">[] = (
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <aside data-pagefind-ignore>
-      <div class="mb-16 mt-12 flex items-center gap-8">
-        <div class="rounded-2xl overflow-hidden flex-shrink-0 shadow-[0_0_38px_10px_rgba(15,23,42,0.12)] dark:shadow-[0_0_42px_12px_rgba(255,255,255,0.12)]" style="width: 180px; height: 180px;">
+      <div class="mb-16 mt-12 flex flex-col items-center gap-6 text-center md:flex-row md:items-center md:gap-8 md:text-left">
+        <div class="order-1 rounded-2xl overflow-hidden flex-shrink-0 shadow-[0_0_38px_10px_rgba(15,23,42,0.12)] dark:shadow-[0_0_42px_12px_rgba(255,255,255,0.12)]" style="width: 180px; height: 180px;">
           <Image
             src={portrait}
             alt="Profile picture of Regina Castro"
             class="w-full h-full scale-120 object-cover"
           />
         </div>
-        <div>
+        <div class="order-2 flex flex-col items-center md:items-start">
         <h1 class="mb-2 text-3xl text-black dark:text-neutral-50">
           <span style="color: var(--primary-color)">Hello!</span> I'm Regina,
         </h1>
-          <section class="mb-4">
+          <section class="mb-4 max-w-xl">
             <p class="text-lg text-black/70 dark:text-white/70 leading-8">
-              A <span
+              A<span
                 class="text-neutral-50"
                 style="font-family: var(--font-mono); font-weight: 500;"
-                >design engineer</span
-              > focused on building delightful, accessible & high-performance digital products.
+                > product designer and UX developer</span
+              > building delightful, accessible, and high-performance experiences.
             </p>
           </section>
-          <button>
-            <svg
-              aria-hidden="true"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div class="flex flex-wrap justify-center gap-2 md:justify-start">
+            <button>
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3.75V14.25"
+                  stroke="#8ae170"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M8.25 10.5L12 14.25L15.75 10.5"
+                  stroke="#8ae170"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.5 16.5V18C4.5 19.2426 5.50736 20.25 6.75 20.25H17.25C18.4926 20.25 19.5 19.2426 19.5 18V16.5"
+                  stroke="#8ae170"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span>Download CV</span>
+            </button>
+            <button
+              id="copy-email-btn"
+              type="button"
+              aria-label="Copy email address"
             >
-              <path
-                d="M12 3.75V14.25"
-                stroke="#8ae170"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-              <path
-                d="M8.25 10.5L12 14.25L15.75 10.5"
-                stroke="#8ae170"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M4.5 16.5V18C4.5 19.2426 5.50736 20.25 6.75 20.25H17.25C18.4926 20.25 19.5 19.2426 19.5 18V16.5"
-                stroke="#8ae170"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-            </svg>
-            <span>Download CV</span>
-          </button>
-          <button
-            id="copy-email-btn"
-            type="button"
-            aria-label="Copy email address"
-            class="ml-2"
-          >
-            <svg
-              aria-hidden="true"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9 9.75C9 8.50736 10.0074 7.5 11.25 7.5H18C19.2426 7.5 20.25 8.50736 20.25 9.75V18C20.25 19.2426 19.2426 20.25 18 20.25H11.25C10.0074 20.25 9 19.2426 9 18V9.75Z"
-                stroke="#8ae170"
-                stroke-width="1.5"
-              />
-              <path
-                d="M4.5 14.25V6C4.5 4.75736 5.50736 3.75 6.75 3.75H15"
-                stroke="#8ae170"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              />
-            </svg>
-            <span id="copy-email-label">Copy email</span>
-          </button>
+              <svg
+                aria-hidden="true"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 9.75C9 8.50736 10.0074 7.5 11.25 7.5H18C19.2426 7.5 20.25 8.50736 20.25 9.75V18C20.25 19.2426 19.2426 20.25 18 20.25H11.25C10.0074 20.25 9 19.2426 9 18V9.75Z"
+                  stroke="#8ae170"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M4.5 14.25V6C4.5 4.75736 5.50736 3.75 6.75 3.75H15"
+                  stroke="#8ae170"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span id="copy-email-label">Copy email</span>
+            </button>
+          </div>
         </div>
       </div>
       <section class="animate space-y-6 mt-12">
@@ -135,7 +136,7 @@ const projects: CollectionEntry<"projects">[] = (
           }
         </ul>
       </section>
-      <section class="animate space-y-6 mt-12">
+      <section class="animate space-y-6 mt-12 mb-12">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
           <h2 class="font-semibold text-black dark:text-white">My journey</h2>
         </div>
@@ -155,12 +156,14 @@ const projects: CollectionEntry<"projects">[] = (
           }
         </ul>
       </section>
-       --><section class="animate space-y-4 mt-12">
-        <h2 class="font-semibold text-black dark:text-white">Let's Connect</h2>
+       -->
+      <GithubContributions />
+      <section class="animate space-y-4 mt-12">
+        <h2 class="font-semibold text-black dark:text-white">Let's Connect!</h2>
         <article>
           <p>
             If you want to get in touch with me about something or just to say
-            hi, reach out on social media or send me an email.
+            hi, reach out on LinkedIn or send me an email.
           </p>
         </article>
         <ul class="not-prose flex flex-wrap gap-2">
@@ -187,8 +190,7 @@ const projects: CollectionEntry<"projects">[] = (
             </Link>
           </li>
         </ul>
-      </section> 
-      <GithubContributions />
+      </section>
     </aside>
   </Container>
 </Layout>

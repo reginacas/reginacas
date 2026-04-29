@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
+import ProjectCard from "@components/ProjectCard.astro";
 import { PROJECTS } from "@consts";
 
 const projects = (await getCollection("projects"))
@@ -14,20 +14,17 @@ const projects = (await getCollection("projects"))
   <Container>
     <aside data-pagefind-ignore>
       <div class="space-y-10">
-        <div class="disc-bg">
-          <div class="disc">
-            <h1  class="text-4xl font-medium text-black dark:text-neutral-50">Selected Projects</h1>
-          </div>
-        </div>
-        <ul class="animate not-prose flex flex-col gap-4">
+        <h1 class="font-semibold text-3xl" style="color: var(--primary-color);">Selected Projects</h1>
+        <ul class="animate not-prose flex flex-col gap-6">
           {
             projects.map((project) => (
               <li>
-                <ArrowCard entry={project} />
+                <ProjectCard project={project} />
               </li>
             ))
           }
         </ul>
+        <p>More projects coming soon!</p>
       </div>
     </aside>
   </Container>
