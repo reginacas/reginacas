@@ -71,6 +71,8 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
 <ClientRouter />
 
 <script is:inline>
+  const FORCE_DARK_MODE = true;
+
   function init() {
     preloadTheme();
     onScroll();
@@ -203,6 +205,12 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
   }
 
   function preloadTheme() {
+    if (FORCE_DARK_MODE) {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+      return;
+    }
+
     const userTheme = localStorage.theme;
 
     if (userTheme === "light" || userTheme === "dark") {

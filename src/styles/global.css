@@ -110,10 +110,14 @@
   }
 
   h2{
-    @apply font-medium text-black dark:text-[var(--primary-color)];
+    @apply font-medium;
   }
   p{
     @apply font-normal text-lg;
+  }
+
+  .section-heading {
+    @apply font-semibold text-black dark:text-white;
   }
 
   blockquote{
@@ -214,6 +218,17 @@
     filter: drop-shadow(
       0 0 5px color-mix(in srgb, var(--primary-color) 50%, transparent)
     );
+  }
+
+  /* Allow opting out of article hover glow for specific links */
+  article a.plain-link {
+    @apply underline underline-offset-[3px] text-current;
+  }
+  article a.plain-link:hover {
+    @apply text-black dark:text-white;
+    @apply decoration-black/50 dark:decoration-white/50;
+    text-shadow: none;
+    filter: none;
   }
 
   /* Refined blockquote / quote styles that match site aesthetic */

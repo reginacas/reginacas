@@ -9,17 +9,6 @@ demoURL: "https://chromewebstore.google.com/detail/senseui/nolkkggkcmpjejlobeljm
 repoURL: "https://github.com/reginacas/sense-ui"
 ---
 
-import { Image } from "astro:assets";
-import senseuiWelcome from "@assets/senseui-welcome.png";
-import senseuiBefore from "@assets/senseui-before.png";
-import senseuiDesired from "@assets/senseui-desired.png";
-import senseuiWizard from "@assets/senseui-wizard.png";
-import senseuiDescription from "@assets/senseui-description.png";
-import senseuiIssues from "@assets/senseui-issues.png";
-import senseuiSettings from "@assets/senseui-settings.png";
-import senseuiPrompts from "@assets/senseui-prompts.png";
-import senseuiProjects from "@assets/senseui-projects.png";
-
 ## 🎨 What is SenseUI?
 
 SenseUI is an open-source browser extension that gives blind and low-vision web developers real-time, actionable feedback on their web designs.
@@ -40,9 +29,9 @@ Additioanlly, developers are forced to manually share screenshots and code conte
 
 ## 💡 Proposed solution
 
-<Image src={senseuiWelcome} alt="SenseUI's welcome page opened in a browser" class="project-img" />
+<img src="/senseui-welcome.png" alt="SenseUI's welcome page opened in a browser" class="project-img" />
 
-This is what sparked the idea to create <i>the first web design focused AI tool for blind and low vision developers</i>: SenseUI, an open-source, AI-powered design tool co-designed with blind and low-vision developers. By embedding accessibility and design context directly into the tool’s architecture, SenseUI eliminates the need for sighted colleagues intervention, enabling developers to work independently, advance their careers, and participate fully in the frontend ecosystem. SenseUI is completely free to use and open to improvement suggestions and feature ideas.
+This is what sparked the idea to create <i>the first web design focused AI tool for blind and low vision developers</i>: SenseUI, an open-source, AI-powered design tool co-designed with blind and low-vision developers. By embedding accessibility and design context directly into the tool's architecture, SenseUI eliminates the need for sighted colleagues intervention, enabling developers to work independently, advance their careers, and participate fully in the frontend ecosystem. SenseUI is completely free to use and open to improvement suggestions and feature ideas.
 
 
 ## 🔄 Process
@@ -55,20 +44,20 @@ My process began with interviews and contextual inquiries with blind and low-vis
 
 **Participants' <i>current</i> workflow using general-purpose AI tools:**<br />
 <br />
-<Image src={senseuiBefore} alt="Diagram showing participants' current workflow with general-purpose AI tools" />
+<img src="/senseui-before.png" alt="Diagram showing participants' current workflow with general-purpose AI tools" />
 
 ---
 
 **Participants' <i>ideal</i> workflow in an AI-assisted design feedback tool:**<br />
 <br />
-<Image src={senseuiDesired} alt="Diagram showing participants' ideal workflow" /><br />
+<img src="/senseui-desired.png" alt="Diagram showing participants' ideal workflow"/><br />
 <br />
 
 ### 2. Prototyping for validation
 
 Before writing production code, I designed and developed a prototype using the Wizard-of-Oz method. This method allowed me to simulate AI-driven design feedback in real-time. By testing this prototype with volunteers, I validated the core value proposition and established the essential feature set without committing to a premature technical architecture.
 
-<Image src={senseuiWizard} alt="Screenshot of the first version of SenseUI for initial validation" />
+<img src="/senseui-wizard.png" alt="Screenshot of the first version of SenseUI for initial validation" class="project-img" />
 <p class="text-center text-sm italic">First version of SenseUI</p>
 
 After testing out the prototype's interface and the pre-generated responses, all participants expressed enthusiasm for a functional version of SenseUI, emphasizing that it would have advantages over the current AI tools they use for visual assistance in their work. 
@@ -76,7 +65,7 @@ After testing out the prototype's interface and the pre-generated responses, all
 <figure class="max-w-screen-md mx-auto text-center">
 	<svg class="w-11 h-11 text-heading mb-4 mx-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V8a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4H5m14-6V8a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4h-1"/></svg>
 	<blockquote>
-		<p class="not-italic text-2xl font-semibold tracking-tight text-heading">It could make it so that being a blind developer wouldn’t have any impact at all.</p>
+		<p class="not-italic text-2xl font-semibold tracking-tight text-heading">It could make it so that being a blind developer wouldn't have any impact at all.</p>
 	</blockquote>
 	<figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
 			<cite class="pe-3 font-medium text-heading">Participant 1</cite>
@@ -98,7 +87,7 @@ With the help of over 10 collaborators, we used the Agile framework to release e
 
 After 5 completed Sprints, SenseUI v1.0 is now live on the Chrome Web Store! 
 
-<Image src={senseuiDescription} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
+<img src="/senseui-description.png" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 
 
 ### Technical achievements
@@ -107,21 +96,21 @@ After 5 completed Sprints, SenseUI v1.0 is now live on the Chrome Web Store!
 
 Unlike general-purpose AI tools, SenseUI autonomously extracts the DOM structure, CSS, and visual state of the current page. This eliminates the "extra labor" of manual screenshots and prompt engineering, allowing developers to focus on the code rather than the tooling.
 
-<Image src={senseuiIssues} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
+<img src="/senseui-issues.png" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 <br />
-<Image src={senseuiSettings} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
+<img src="/senseui-settings.png" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 
 #### Effective workflows for UI auditing
 
 Users can now perform independent UI audits on their web projects; they can identify accessibility gaps, design issues and validate design decisions in real-time. By providing slash commands and buttons for common tasks, the system provides effective workflows and generates actionable feedback rather than generic suggestions.
 
-<Image src={senseuiPrompts} alt="A screenshot showing SenseUI's available slash commands: /describe, /issues, /type, /color, /spacing, /alignment, /refresh, /clear" class="project-img block mx-auto w-full md:w-2/3" />
+<img src="/senseui-prompts.png" alt="A screenshot showing SenseUI's available slash commands: /describe, /issues, /type, /color, /spacing, /alignment, /refresh, /clear" class="project-img block mx-auto w-full md:w-2/3" />
 
 #### Project-driven workflows
 
 SenseUI supports project-level state management, allowing developers to align their codebase with project-specific design specifications and goals, bridging the gap between high-level vision and implementation.
 
-<Image src={senseuiProjects} alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
+<img src="/senseui-projects.png" alt="A screenshot showing SenseUI opened on a page, giving feedback about Regina Castro's website" class="project-img" />
 <br />
 <figure class="max-w-screen-md mx-auto text-center">
 	<svg class="w-11 h-11 text-heading mb-4 mx-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V8a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4H5m14-6V8a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4h-1"/></svg>
@@ -146,5 +135,4 @@ I would like to give a shout-out to some of the most engaged people on this proj
 - Muhammad Ammar Awaisi
 - Anil Kumar
 - Farhan Ishrak Fahim
-- Alejkunkel 
-
+- Alejkunkel
