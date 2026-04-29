@@ -76,7 +76,7 @@
   body {
     @apply font-sans antialiased;
     font-family: var(--font-sans);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     font-feature-settings: "cv11";
     @apply flex flex-col;
@@ -113,7 +113,12 @@
     @apply font-medium text-black dark:text-[var(--primary-color)];
   }
   p{
-    @apply font-normal text-lg leading-9;
+    @apply font-normal text-lg;
+  }
+
+  blockquote{
+    font-family: var(--font-serif);
+    font-style: regular;
   }
 
   a {
@@ -152,7 +157,12 @@
   }
   i {
     font-family: var(--font-serif);
-    font-size:large;
+    font-size: large;
+    font-weight: 800;
+  }
+  link {
+    @apply text-current;
+    color: var(--primary-color);
   }
   button{
     @apply cursor-pointer inline-flex items-center gap-2 rounded-md border border-black/15 px-3 py-2 text-sm text-black/80 transition-colors duration-300 ease-in-out hover:border-black/30 hover:text-black focus-visible:border-black/30 focus-visible:text-black dark:border-white/20 dark:text-white/80 dark:hover:border-white/40 dark:hover:text-white dark:focus-visible:border-white/40 dark:focus-visible:text-white;
@@ -204,6 +214,27 @@
     filter: drop-shadow(
       0 0 5px color-mix(in srgb, var(--primary-color) 50%, transparent)
     );
+  }
+
+  /* Refined blockquote / quote styles that match site aesthetic */
+  article blockquote {
+    @apply border-l-4 pl-6 pr-4 py-4 my-6 rounded-md bg-neutral-50/60 dark:bg-neutral-900/40;
+    border-color: color-mix(in srgb, var(--primary-color) 40%, transparent);
+    color: var(--primary-color);
+    background-image: linear-gradient(90deg, color-mix(in srgb, var(--primary-color) 6%, transparent), transparent);
+  }
+  article blockquote p {
+    @apply m-0 text-lg font-medium leading-8;
+    color: inherit;
+  }
+  article blockquote footer {
+    @apply mt-2 text-sm font-sans text-black/60 dark:text-white/60;
+  }
+
+  /* Lightweight inline quote utility */
+  .project-quote {
+    @apply inline-block  text-lg font-medium; 
+    color: var(--primary-color);
   }
 }
 
