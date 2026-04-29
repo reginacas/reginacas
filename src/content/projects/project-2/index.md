@@ -1,5 +1,5 @@
 ---
-title: "Simplifying complex scientific workflows through modular design"
+title: "Smart Workflows — Simplifying complex scientific workflows creation"
 description: "An interactive, engaging UI component for Beckman Coulter Life Sciences' scientific application workflows."
 date: "2024-03-26"
 image: "/astro-nano.png"
