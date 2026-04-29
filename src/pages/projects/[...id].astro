@@ -24,15 +24,10 @@ const { Content, headings } = await render(project);
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
-  <aside class="hidden lg:block fixed left-6 w-64 top-20">
-    <div class="fixed w-70 top-45">
-      <TableOfContents headings={headings} />
-    </div>
-  </aside>
   <Container>
-    <div class="animate">
-      <BackToPrevious href="/projects">Back to projects</BackToPrevious>
-    </div>
+    <!--<div class="animate">
+      <BackToPrevious href="/work">Go back</BackToPrevious>
+    </div> -->
     <div class="animate my-10 space-y-1">
       <div class="flex items-center gap-1.5">
         <div class="font-base text-sm">
@@ -73,7 +68,7 @@ const { Content, headings } = await render(project);
         )
       }
     </div>
-    <div class="lg:hidden">
+    <div class="animate my-10">
       <TableOfContents headings={headings} />
     </div>
     <article class="animate">

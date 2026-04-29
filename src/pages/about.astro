@@ -5,91 +5,85 @@ import WorkTimeline from "@components/WorkTimeline.astro";
 import GithubContributions from "@components/GithubContributions.astro";
 import Link from "@components/Link.astro";
 import { Image } from "astro:assets";
-import portrait from "@assets/real-me.jpg";
+import portrait from "@assets/about-me-1.jpg";
 import { SITE, SOCIALS } from "@consts";
 ---
 
 <Layout title="About" description="Learn more about Regina Castro.">
   <Container>
     <aside data-pagefind-ignore>
-      <section class="animate space-y-4">
+      <section class="animate space-y-4 mt-10">
         <h1 class="font-semibold text-3xl" style="color: var(--primary-color);">About me</h1>
         <p>
-         I'm <i>Regina</i>, a designer living in Germany.<br>  
-         I have more than 6 years of experience working in the UX field, and currently getting my M.Sc. in Human-Computer Interaction at the University of Siegen.
-        
-        </p>
-          <Image
+I'm <i>Regina Castro</i>, a UX Designer based in Germany with 5+ years of experience, particularly in B2B SaaS and web experiences aimed at technical audiences.
+For my next role, I'm looking to work on developer tools, AI-assisted interfaces, and accessibility-focused products.</p>
+        <Image
             src={portrait}
             alt="Profile picture of Regina Castro"
             class="rounded-16"
           />
-          <h2 class="mt-8">What do I do?</h2>
-          I design digital interfaces and products, with a strong focus on understanding user needs, motivations, and pain points rather than just building features. 
-          My strongest skill is my ability to empathize with users while also understanding business needs and collaborating closely with engineers to design technically feasible solutions. 
-
-          I can write my own front-end code using HTML and CSS and can understand and use AI tools to generate JavaScript (with throrough testing). with a sharp focus on performance, accessibility, scalability & modular design. 
-          <br>
-          My pet peeves are: 
-          - Non-responsive designs that don't work across different screen sizes and devices
-          - Interfaces that don't follow accessibility best practices, especially for screen reader users
-          - Over-reliance on static mockups instead of building interactive prototypes to validate ideas early
-          - Designs that prioritize visual polish and fancy animation over solving real user problems
-          <br>
-
-           </p>
-          </p>
           <p>
-          My recent experience focuses on human-AI interaction,
-          accessibility & developer tools. I feel comfortable working through the whole design process,
-          from gathering requirements based on user research, designing using Figma/Penpot, and building components using HTML/CSS and JS with a sharp
-          focus on performance, accessibility, scalability & modular design.
+            I'm currently working as a web and digital experience designer at <a href="https://www.beckman.com/" target="_blank" rel="noopener noreferrer">Beckman Coulter Life Sciences</a>, a global leader in life sciences and diagnostics, while pursuing my M.Sc. in Human-Computer Interaction at the University of Siegen. 
+            Before that, I was a UX designer at <a href="https://www.questionpro.com/" target="_blank" rel="noopener noreferrer">QuestionPro</a>, a comprehensive survey and research software platform.
+            </p>
+            <p>
+              On my free time, I love reading (specially magical realism and literary fiction), cooking and planning trips and concerts.
+            My current personal goals are to ace the B2 German exam, learn creative coding and walk the Camino de Santiago. 
           </p>
-          <p>For my Master’s thesis, I am currently developing an AI-assisted, open-source web extension specifically for
-          blind and low-vision (BLV) developers. This project allowed me to
-          combine my passion for open-source software and developer tools with a deep technical
-          challenges: building usable, context-based LLM interfaces that are fully accessible for screen reader users.
+
+          <hr class="my-12 border-gray-500" />
+
+          <h2>My background</h2>
+          <p>
+          My journey started in graphic and motion design before evolving into UX design and research. Over time, my interest in how products actually work has led me toward design engineering and UI development.
+          This blend of interests has allowed me to become comfortable across the entire product lifecycle, from research to design to UI implementation.
           </p>
-          <h2>My skills</h2>
-          <div class="skills-cards flex flex-col gap-6">
+          <hr class="my-12 border-gray-500" />
+          <h2>What I'm looking for in my next role</h2>
+          <p>
+          I'm particularly interested in working on developer tools, AI-assisted interfaces, and accessibility-focused products that solve real user problems and have a positive impact on people's lives.
+        </p>
+          <h3>My pet peeves are:</h3>
+          <ul class="list-disc ml-4 space-y-2">
+            <li>Building features without strategy</li>
+            <li>Thinking of accessibility as an afterthought</li>
+            <li>Over-reliance on static mockups over interactive prototypes</li>
+            <li>Prioritizing fancy visuals and animation over user needs and performance</li>
+          </ul>
+          <hr class="my-12 border-gray-500" />
+          <h2>My strengths</h2>
+          <div class="skills-cards grid grid-cols-1 gap-6 md:grid-cols-2">
             <div class="flex gap-3 not-prose group block overflow-hidden rounded-xl border border-black/15 bg-white p-3 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-black/30 hover:shadow-sm focus-visible:-translate-y-0.5 focus-visible:border-black/30 focus-visible:shadow-sm dark:border-white/20 dark:bg-neutral-900 dark:hover:border-white/40 dark:focus-visible:border-white/40">
-              <div><h3 class="text-xl font-semibold mb-4">Engineering</h3>
-              <ul class="space-y-2">
-                <li>Clean HTML/CSS implementation</li>
-                <li>Accessibility compliance and inclusive design, with a focus on screen reader users</li>
-                <li>Responsiveness, performance and Core Web Vitals</li>
-              </ul>
+              <div><h3 class="text-xl font-semibold mb-4">🧠 Research-backed design</h3>
+                <p>I bring formal UX research methodologies to my design process and validate my ideas with real user feedback.</p>
               </div>
             </div>
             <div class="flex gap-3 not-prose group block overflow-hidden rounded-xl border border-black/15 bg-white p-3 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-black/30 hover:shadow-sm focus-visible:-translate-y-0.5 focus-visible:border-black/30 focus-visible:shadow-sm dark:border-white/20 dark:bg-neutral-900 dark:hover:border-white/40 dark:focus-visible:border-white/40">
-              <div><h3 class="text-xl font-semibold mb-4">Design</h3>
-              <ul class="space-y-2">
-                <li>Systematic thinking</li>
-                <li>Careful attention to detail and visual polish as well as solving business and user problems</li>
-              </ul>
+              <div><h3 class="text-xl font-semibold mb-4">🧩 Systems-thinking</h3>
+                <p>I know how damaging technical debt can be, so I emphasize designing for scalable systems and reusable components.</p>
               </div>
             </div>
             <div class="flex gap-3 not-prose group block overflow-hidden rounded-xl border border-black/15 bg-white p-3 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-black/30 hover:shadow-sm focus-visible:-translate-y-0.5 focus-visible:border-black/30 focus-visible:shadow-sm dark:border-white/20 dark:bg-neutral-900 dark:hover:border-white/40 dark:focus-visible:border-white/40">
-              <div><h3 class="text-xl font-semibold mb-4">Research</h3>
-              <ul class="space-y-2">
-                <li>Replacing assumptions with evidence-based findings from user feedback</li>
-                <li>Usability testing and user/stakeholder interviews</li>
-              </ul>
+              <div>
+                <h3 class="text-xl font-semibold mb-4">💻 Technical depth</h3>
+                <p>
+                  I can build components and prototypes using HTML, CSS, and Tailwind, and I leverage AI-assisted coding tools to accelerate my workflow responsibly.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-3 not-prose group block overflow-hidden rounded-xl border border-black/15 bg-white p-3 transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:border-black/30 hover:shadow-sm focus-visible:-translate-y-0.5 focus-visible:border-black/30 focus-visible:shadow-sm dark:border-white/20 dark:bg-neutral-900 dark:hover:border-white/40 dark:focus-visible:border-white/40">
+              <div>
+                <h3 class="text-xl font-semibold mb-4">🤝 Collaboration</h3>
+                <p>
+                  I enjoy collaborating closely with developers and have experience using version control tools like GitHub to stay aligned.
+                </p>
               </div>
             </div>
           </div>
-          <h2 class="mt-8">Values and principles</h2>
-          <p>I am at my best in collaborative environments that value detail-oriented design and evidence-based decision-making. My work is guided by the following principles:</p>
-            <ul>
-              <li class="list-disc py-1 ml-4 text-lg">"Ship to Learn" mindset: I prioritize building interactive prototypes over static mockups to uncover technical constraints and user insights early in the lifecycle.</li>
-              <li class="list-disc py-1 ml-4 text-lg">Accessibility as a foundation: I advocate for WCAG compliance to ensure products are inclusive by design.</li>
-              <li class="list-disc py-1 ml-4 text-lg">Design engineering: I look to collaborate with engineers with "the front of the front-end", to design with technical constraints in mind and translate them into code solutions.</li>
-              <li class="list-disc py-1 ml-4 text-lg">AI-Augmented workflows: I embrace using AI-assisted development to quickly validate ideas. This allows me to spend more time refining the details and the "human" side of the interface</li>
-            </ul>
-      </section>
+         
       <section class="animate space-y-6 mt-12">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
-          <h2 class="font-semibold text-black dark:text-white">Work</h2>
+          <h2 class="font-semibold text-black dark:text-white">My journey so far</h2>
         </div>
         <WorkTimeline />
       </section>
@@ -126,7 +120,6 @@ import { SITE, SOCIALS } from "@consts";
           </li>
         </ul>
       </section>
-      <GithubContributions />
     </aside>
   </Container>
 </Layout>

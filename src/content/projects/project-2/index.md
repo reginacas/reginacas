@@ -16,9 +16,11 @@ At Beckman Coulter Life Sciences, scientific workflows are one of the key elemen
 
 - **The stack:** Vanilla JavaScript, Semantic HTML5, CSS, and accessibility-first architecture.
 
-- **My role:** UX Researcher and Design Engineer.
-
 - **Outcome:** Created a re-usable UI component and a tool for generating them without coding, now used by Digital Experience Managers globally.
+
+
+## 👩🏻‍💻 My role
+I was the sole designer and developer of SenseUI, responsible for all aspects of the project, from user research, design and the core development. I also led the community engagement efforts, recruiting volunteers for testing and co-development.
 
 ## The problem
 
